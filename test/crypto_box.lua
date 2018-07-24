@@ -19,4 +19,3 @@ local msg = sodiumb.crypto_box_easy(tmsg, nonce, bob.publicKey, alice.privateKey
 local dmsg = sodiumb.crypto_box_open_easy(msg, nonce, alice.publicKey, bob.privateKey)
 
 print('dmsg', dmsg)
-

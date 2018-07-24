@@ -11,8 +11,8 @@ CFLAGS := -Wall -Wno-strict-aliasing -fPIC -nostartfiles -shared \
        $(shell \
          PKG_CONFIG_PATH=$(PKG_CONFIG_PATH) \
          $(PKG_CONFIG) --cflags lem) \
+
+LDFLAGS := -Os \
        $(shell \
          PKG_CONFIG_PATH=$(PKG_CONFIG_PATH) \
          $(PKG_CONFIG) --libs --cflags libsodium)
-
-LDFLAGS := -Os

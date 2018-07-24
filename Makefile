@@ -8,8 +8,9 @@ all: $(clib)
 .PHONY: test strip
 
 $(clib): lem/sodiumb/core.c
-	$(CC) $(CFLAGS) $(LDFLAGS) \
+	$(CC) $(CFLAGS) \
 	lem/sodiumb/core.c \
+	$(LDFLAGS) \
 	 -o $@ 
 
 strip: $(clib)
@@ -17,7 +18,6 @@ strip: $(clib)
 
 install: $(clib) strip
 	mkdir -p $(cmoddir)/lem/sodiumb
-	mkdir -p $(lmoddir)/lem/sodiumb
 	install -m 755 lem/sodiumb/core.so     $(cmoddir)/lem/sodiumb/
 
 clean:
